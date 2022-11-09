@@ -7,19 +7,19 @@
     </style>
 
     <div class="login-form">
-        <form>
+        <form #adminlogin="ngForm" (ngSubmit)="OnLoginSubmit(adminlogin)">
             <h1>Admin Login</h1>
             <div class="content">
                 <div class="input-field">
-                    <input type="email" placeholder="Email" autocomplete="nope">
+                    <input ngModel name="username" type="text" placeholder="Username" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                    <input type="password" placeholder="Password" autocomplete="new-password">
+                    <input ngModel name="password" type="password" placeholder="Password" autocomplete="new-password">
                 </div>
                 <a href="#" class="link">Forgot Your Password?</a>
             </div>
             <div class="action">
-                <button routerLink="/register">Register</button>
+                <button>Register</button>
                 <button>Sign in</button>
             </div>
         </form>
