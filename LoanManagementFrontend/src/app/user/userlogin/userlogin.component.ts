@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { UserAuthService } from 'src/app/userservices/userauth.service';
 
 @Component({
   selector: 'app-userlogin',
@@ -6,20 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userlogin.component.css']
 })
 export class UserloginComponent implements OnInit {
-  sharedService: any;
-  router: any;
+ 
 
-  constructor() { }
+ constructor(private userauthService: UserAuthService,private activeRoute:ActivatedRoute,private router:Router) {
+    
+   }
 
   ngOnInit(): void {
   }
   OnLoginSubmit(userlogin: any) {
-    console.log(userlogin);
-    // this.sharedService.adminLogin(userlogin.form.value).subscribe((data) => {
-    //   console.log(data);
-    //   sessionStorage.setItem('token', data);
-      
-    //   this.router.navigate(["./admin-home"]);
-    // })
+    // console.log(userlogin);
+    this.userauthService.userLogin(userlogin.form.value).subscribe((data) => {
+      console.log(data);
+      sessionStorage.setItem('usertoken', data);
+     
+      this.router.navigate(["./userhome"]);
+    }, (error) => {
+      // console.log(error.status);
+      alert("error");
+    })
 }
 }

@@ -33,8 +33,8 @@ export class SharedService {
   adminHome(): Observable<any> {
     // return this.http.get(this.APIurl + "AdminHome/home",{headers:{"authentication":""+sessionStorage.getItem("Token")}});
     return this.http.get(this.APIurl + "AdminHome/home", { headers: { "Authorization": "Bearer " + sessionStorage.getItem('token') }, responseType: 'text' });
-  
-   
   }
-
+  emicalculate(val:any): Observable<any>{
+     return this.http.post(this.APIurl + "api/Emi/calculateemi", val,{responseType:'text'});
+  }
 }

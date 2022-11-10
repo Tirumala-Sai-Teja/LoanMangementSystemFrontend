@@ -50,55 +50,32 @@
             <table class="table bg-white">
                 <thead class="bg-dark text-light">
                     <tr>
-                        <th>App ID</th>
-                        <th>Loan Type</th>
-                        <th>Loan Amount</th>
-                        <th>Customer Name</th>
-                        <th>Monthly Income</th>
-                        <th>Gender</th>
-                        <th>Age</th>
-                        <th>Address</th>
-                        <th>Phone No</th>
+                        <th>Customer ID</th>
+                        <th>Username</th>
                         <th>Email ID</th>
+                        <th>Phone No</th>
+                        <th>Address</th>
+                        <th>Gender</th>
+                        <th>DOB</th>
+                        <th>Monthly Income</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td data-title="App ID">1</td>
-                        <td data-title="Loan Type">Car</td>
-                        <td data-title="Age">20000</td>
-                        <td data-title="State">Karan</td>
-                        <td data-title="Email">10000</td>
-                        <td data-title="Phone No">Male</td>
-                        <td data-title="Phone No">34</td>
-                        <td data-title="Phone No">Address</td>
-                        <td data-title="Phone No">9876543456</td>
-                        <td data-title="Phone No">karan123@gmail.com</td>
+                    <tr *ngFor="let user of usersList">
+                        <td data-title="ID">{{user.id}}</td>
+                        <td data-title="Username">{{user.username}} </td>
+                        <td data-title="Email ID">{{user.email}}</td>
+                        <td data-title="Phone No">{{user.number}}</td>
+
+                        <td data-title="Address">{{user.address}}</td>
+                        <td data-title="Gender">{{user.gender}}</td>
+                        <td data-title="DOB">{{user.dob}}</td>
+                        <td data-title="Monthly Income">{{user.monthlyIncome}}</td>
+
                     </tr>
-                    <tr>
-                        <td data-title="App ID">1</td>
-                        <td data-title="Loan Type">Car</td>
-                        <td data-title="Age">20000</td>
-                        <td data-title="State">Karan</td>
-                        <td data-title="Email">10000</td>
-                        <td data-title="Phone No">Male</td>
-                        <td data-title="Phone No">34</td>
-                        <td data-title="Phone No">Address</td>
-                        <td data-title="Phone No">9876543456</td>
-                        <td data-title="Phone No">karan123@gmail.com</td>
-                    </tr>
-                    <tr>
-                        <td data-title="App ID">1</td>
-                        <td data-title="Loan Type">Car</td>
-                        <td data-title="Age">20000</td>
-                        <td data-title="State">Karan</td>
-                        <td data-title="Email">10000</td>
-                        <td data-title="Phone No">Male</td>
-                        <td data-title="Phone No">34</td>
-                        <td data-title="Phone No">Address</td>
-                        <td data-title="Phone No">9876543456</td>
-                        <td data-title="Phone No">karan123@gmail.com</td>
-                    </tr>
+
+
 
                 </tbody>
             </table>

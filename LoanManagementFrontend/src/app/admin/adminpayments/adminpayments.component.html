@@ -52,7 +52,6 @@
                     <tr>
                         <th>Receipt ID</th>
                         <th>Customer ID</th>
-                        <th>Customer Name</th>
                         <th>Receipt Date</th>
                         <th>EMI Date</th>
                         <th>EMI Amount</th>
@@ -61,15 +60,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td data-title="Receipt ID">1</td>
-                        <td data-title="Customer ID">1</td>
-                        <td data-title="Customer Name">Arya</td>
-                        <td data-title="Receipt Date">07/04/2022</td>
-                        <td data-title="EMI Date">07/04/2022</td>
-                        <td data-title="EMI Amount">100</td>
-                        <td data-title="Late Fine Charges">100</td>
-                        <td data-title="Total Amount">1000</td>
+                    <tr *ngFor="let payment of Payments">
+                        <td data-title="Receipt ID">1{{payment.receiptId}}</td>
+                        <td data-title="Customer ID">1{{payment.custId}}</td>
+                        <td data-title="Customer Name">1{{payment.receiptDate}}</td>
+                        <td data-title="Receipt Date">1{{payment.emiDate}}</td>
+                        <td data-title="EMI Date">1{{payment.emiAmount}}</td>
+                        <td data-title="EMI Amount">1{{payment.lateFineCharge}}</td>
+                        <td data-title="Late Fine Charges">1{{payment.totalAmount}}</td>
+
                     </tr>
 
 

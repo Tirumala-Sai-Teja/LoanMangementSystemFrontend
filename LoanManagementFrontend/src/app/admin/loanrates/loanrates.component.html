@@ -50,38 +50,25 @@
             <table class="table bg-white">
                 <thead class="bg-dark text-light">
                     <tr>
+                        <th>S.No</th>
                         <th>Loan Type</th>
-                        <th>Previous Loan Rate</th>
+
                         <th>New Loan Rate</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    <tr *ngFor="let loan of LoansList">
+                    <tr *ngFor="let loan of LoansList;let i=index">
+                        <td>{{i}}</td>
                         <td data-title="loan-type">{{loan.loanType}}</td>
-                        <td data-title="previous-loan-rate">{{loan.interestRate}}</td>
-                        <td data-title="new-loan-rate"><input type="number" /></td>
-                        <td> <button type="button">Approve</button></td>
+                        <!-- <td data-title="previous-loan-rate">{{loan.interestRate}}</td> -->
+                        <td data-title="new-loan-rate"><input type="number" [(ngModel)]="loan.interestRate" /></td>
+                        <td> <button type="button"
+                                (click)="editLoanRates(loan.loanType,loan.interestRate)">Approve</button>
+                        </td>
                     </tr>
-                    <!-- <tr>
-                        <td data-title="Loan Type">Home</td>
-                        <td data-title="Previous Loan Rate">6.5</td>
-                        <td data-title="New Loan Rate"><input type="number" /></td>
-                        <td> <button type="button">Approve</button></td>
-                    </tr>
-                    <tr>
-                        <td data-title="Loan Type">Car</td>
-                        <td data-title="Previous Loan Rate">8.5</td>
-                        <td data-title="New Loan Rate"><input type="number" /></td>
-                        <td> <button type="button">Approve</button></td>
-                    </tr>
-                    <tr>
-                        <td data-title="Loan Type">Personal</td>
-                        <td data-title="Previous Loan Rate">6.5</td>
-                        <td data-title="New Loan Rate"><input type="number" /></td>
-                        <td> <button type="button">Approve</button></td>
-                    </tr> -->
+
 
 
 

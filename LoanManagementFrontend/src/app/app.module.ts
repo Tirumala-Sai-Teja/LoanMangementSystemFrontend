@@ -8,7 +8,7 @@ import { FormsModule,ReactiveFormsModule} from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
-import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ChangepasswordComponent } from './user/changepassword/changepassword.component';
 import { RegisterComponent } from './user/register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { EmicalculatorComponent } from './emicalculator/emicalculator.component';
@@ -26,6 +26,7 @@ import { AdminusersComponent } from './admin/adminusers/adminusers.component';
 import { LoanapplicationsComponent } from './admin/loanapplications/loanapplications.component';
 import { HomeComponent } from './user/home/home.component';
 import { MyloansComponent } from './user/myloans/myloans.component';
+import { AdminchangepasswordComponent } from './admin/adminchangepassword/adminchangepassword.component';
 
 
 
@@ -49,6 +50,7 @@ import { MyloansComponent } from './user/myloans/myloans.component';
       LoanapplicationsComponent,
       HomeComponent,
       MyloansComponent,
+      AdminchangepasswordComponent,
 
 
   ],

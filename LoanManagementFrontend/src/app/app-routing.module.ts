@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { EmicalculatorComponent } from './emicalculator/emicalculator.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ChangepasswordComponent } from './user/changepassword/changepassword.component';
+import { AdminchangepasswordComponent } from './admin/adminchangepassword/adminchangepassword.component';
 
 import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
 import { AdminhomeComponent} from './admin/adminhome/adminhome.component';
@@ -23,22 +24,27 @@ const routes: Routes = [
     { path: '', component: WelcomeComponent },
   { path: "adminlogin", component: AdminloginComponent },
   {
-    path:"change-password",component:ChangepasswordComponent
+    path:"adminhome/changepassword",component:AdminchangepasswordComponent
+  },
+  {
+    path:"userhome/changepassword",component:ChangepasswordComponent
   },
   { path: "emicalculator" , component: EmicalculatorComponent},
 
   { path: "adminhome", component: AdminhomeComponent },
-  { path: "loanrates", component: LoanratesComponent },
-  { path: "payments", component: AdminpaymentsComponent },
-  { path: "allusers", component: AdminusersComponent },
-  {path:"loanapplications",component:LoanapplicationsComponent},
+  { path: "adminhome/loanrates", component: LoanratesComponent },
+  { path: "adminhome/payments", component: AdminpaymentsComponent },
+  { path: "adminhome/allusers", component: AdminusersComponent },
+  { path: "adminhome/loanapplications", component: LoanapplicationsComponent },
+  { path: "admin/emicalculator" , component: EmicalculatorComponent},
   
   { path: "register", component: RegisterComponent },
-  { path: "myprofile", component: UserprofileComponent },
-  { path: "myloans", component: MyloansComponent },
+  { path: "userhome/myprofile", component: UserprofileComponent },
+  { path: "userhome/myloans", component: MyloansComponent },
   { path: "userlogin", component: UserloginComponent },
   { path: "userhome", component: HomeComponent },
-    {path:"applyloan",component:UserapplyloanComponent},
+  { path: "userhome/applyloan", component: UserapplyloanComponent },
+    {path:"userhome/emicalculator",component:EmicalculatorComponent},
     // otherwise redirect to welcome page
     { path: '**', redirectTo: '' }
 ];

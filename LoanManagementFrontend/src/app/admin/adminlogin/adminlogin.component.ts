@@ -20,10 +20,13 @@ export class AdminloginComponent implements OnInit {
   OnLoginSubmit(adminlogin:NgForm) {
     console.log(adminlogin);
     this.authService.adminLogin(adminlogin.form.value).subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       sessionStorage.setItem('token', data);
       
-      this.router.navigate(["./admin-home"]);
+      this.router.navigate(["./adminhome"]);
+    }, (error) => {
+      // console.log(error.status);
+      alert("Invalid Credentials!!");
     })
   }
 

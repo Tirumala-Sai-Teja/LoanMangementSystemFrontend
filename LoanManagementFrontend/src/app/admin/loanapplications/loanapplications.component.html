@@ -45,7 +45,7 @@
 
 <body>
     <section class="bg-light p-5">
-        <h3 class="pb-2">Customer Loan Application</h3>
+        <h3 class="pb-2">Customer Loan Applications</h3>
         <div class="table-responsive" id="no-more-tables">
             <table class="table bg-white">
                 <thead class="bg-dark text-light">
@@ -53,56 +53,25 @@
                         <th>App ID</th>
                         <th>Loan Type</th>
                         <th>Loan Amount</th>
-                        <th>Customer Name</th>
-                        <th>Monthly Income</th>
-                        <th>Gender</th>
-                        <th>Age</th>
-                        <th>Address</th>
-                        <th>Phone No</th>
-                        <th>Email ID</th>
+                        <th>Customer ID</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td data-title="App ID">1</td>
-                        <td data-title="Loan Type">Car</td>
-                        <td data-title="Age">20000</td>
-                        <td data-title="State">Karan</td>
-                        <td data-title="Email">10000</td>
-                        <td data-title="Phone No">Male</td>
-                        <td data-title="Phone No">34</td>
-                        <td data-title="Phone No">Address</td>
-                        <td data-title="Phone No">9876543456</td>
-                        <td data-title="Phone No">karan123@gmail.com</td>
-                        <td> <button type="button">Approve</button></td>
+                    <!-- *ngIf="loan.isApproved==0" -->
+                    <tr *ngFor="let loan of userapplicationList">
+
+                        <td data-title="App ID">{{loan.id}} </td>
+                        <td data-title="Loan Type">{{loan.loanType}}</td>
+                        <td data-title="Loan Type">{{loan.loanAmount}}</td>
+                        <td data-title="custId">{{loan.custId}}</td>
+                        <td> <button type="button" [disabled]="loan.isApproved==1"
+                                (click)="approveloan(loan.id,loan.loanType,loan.loanAmount,loan.custId,loan.isApproved)">{{loan.isApproved==0?'Approve':'Approved'}}</button>
+                        </td>
+
                     </tr>
-                    <tr>
-                        <td data-title="App ID">1</td>
-                        <td data-title="Loan Type">Car</td>
-                        <td data-title="Age">20000</td>
-                        <td data-title="State">Karan</td>
-                        <td data-title="Email">10000</td>
-                        <td data-title="Phone No">Male</td>
-                        <td data-title="Phone No">34</td>
-                        <td data-title="Phone No">Address</td>
-                        <td data-title="Phone No">9876543456</td>
-                        <td data-title="Phone No">karan123@gmail.com</td>
-                        <td> <button type="button">Approve</button></td>
-                    </tr>
-                    <tr>
-                        <td data-title="App ID">1</td>
-                        <td data-title="Loan Type">Car</td>
-                        <td data-title="Age">20000</td>
-                        <td data-title="State">Karan</td>
-                        <td data-title="Email">10000</td>
-                        <td data-title="Phone No">Male</td>
-                        <td data-title="Phone No">34</td>
-                        <td data-title="Phone No">Address</td>
-                        <td data-title="Phone No">9876543456</td>
-                        <td data-title="Phone No">karan123@gmail.com</td>
-                        <td> <button type="button">Approve</button></td>
-                    </tr>
+
+
 
                 </tbody>
             </table>

@@ -7,17 +7,23 @@
     </style>
 
     <div class="login-form">
-        <form>
+        <form #calculate="ngForm" (ngSubmit)="OnCalculateEmi(calculate)">
             <h1>EMI Calculator</h1>
             <div class="content">
                 <div class="input-field">
-                    <input type="text" placeholder="Loan Amount" autocomplete="nope">
+                    <input type="number" ngModel name="loanamount" placeholder="Loan Amount" autocomplete="nope">
+                </div>
+
+                <div class="input-field">
+                    <input type="number" ngModel name="interestrate" placeholder="Annual Interest Rate"
+                        autocomplete="nope">
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Loan tenure in Months" autocomplete="nope">
+                    <input type="number" ngModel name="tenure" placeholder="Loan tenure in Months" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Annual Interest Rate" autocomplete="nope">
+                    <input type="text" ngModel placeholder="RESULT" name="result" value={{result.toString()}}
+                        disabled="disabled" autocomplete="nope">
                 </div>
             </div>
             <div class="action">

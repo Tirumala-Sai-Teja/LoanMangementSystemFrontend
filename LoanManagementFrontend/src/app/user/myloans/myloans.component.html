@@ -53,29 +53,17 @@
                         <th>App ID</th>
                         <th>Loan Type</th>
                         <th>Loan Amount</th>
-                        <th>Customer Name</th>
-                        <th>Monthly Income</th>
-                        <th>Gender</th>
-                        <th>Age</th>
-                        <th>Address</th>
-                        <th>Phone No</th>
-                        <th>Email ID</th>
+
                         <th>Is Approved</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td data-title="App ID">1</td>
-                        <td data-title="Loan Type">Car</td>
-                        <td data-title="Loan Amount">20000</td>
-                        <td data-title="Customer Name">Karan</td>
-                        <td data-title="Monthly Income">10000</td>
-                        <td data-title="Gender">Male</td>
-                        <td data-title="Age">34</td>
-                        <td data-title="Address">Address</td>
-                        <td data-title="Phone No">9876543456</td>
-                        <td data-title="Email Id">karan123@gmail.com</td>
-                        <td data-title="IS Approved">Yes</td>
+                    <tr *ngFor="let loan of UserLoansList">
+                        <td data-title="App ID">{{loan.id}}</td>
+                        <td data-title="Loan Type">{{loan.loanType}}</td>
+                        <td data-title="Loan Amount">{{loan.loanAmount}}</td>
+                        <td data-title="IS Approved">{{loan.isApproved==1?'Yes':'No'}}</td>
+
                     </tr>
 
 

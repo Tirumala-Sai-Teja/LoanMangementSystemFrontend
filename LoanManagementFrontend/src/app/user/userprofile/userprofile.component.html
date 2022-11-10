@@ -7,12 +7,12 @@
                     <a href="#">
                         <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
                     </a>
-                    <h1 style="color:black">Customer Name(add customer name)</h1>
-                    <p style="color:black">emailid(add email id)</p>
+                    <h1 style="color:black">{{Userdetails.username }}</h1>
+                    <p style="color:black">{{Userdetails.email }}</p>
                 </div>
 
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
+                    <li class="active"><a routerLink="/userhome"> <i class="fa fa-user"></i> Home</a></li>
 
                 </ul>
             </div>
@@ -29,34 +29,35 @@
                     <h1>My Profile </h1>
                     <div class="row">
                         <div class="bio-row">
-                            <p><span>Customer Name</span>: Camila</p>
+                            <p><span>Customer Name</span>: {{Userdetails.username }}</p>
                         </div>
                         <div class="bio-row">
-                            <p><span>PAN No</span>: Smith</p>
+                            <p><span>PAN No</span>: {{Userdetails.pan}}</p>
+                        </div>
+                        <!-- <div class="bio-row">
+                            <p><span>City</span></p>
+                        </div> -->
+                        <div class="bio-row">
+                            <p><span>Birthday</span>: {{Userdetails.dob}}</p>
                         </div>
                         <div class="bio-row">
-                            <p><span>City</span>: Australia</p>
+                            <p><span>Address</span>: {{Userdetails.address}}</p>
                         </div>
                         <div class="bio-row">
-                            <p><span>Birthday</span>: 13 July 1983</p>
+                            <p><span>Email </span>: {{Userdetails.email}}</p>
                         </div>
                         <div class="bio-row">
-                            <p><span>Address</span>: UI Designer</p>
+                            <p><span>Monthly Income</span>: {{Userdetails.monthlyIncome}}</p>
                         </div>
                         <div class="bio-row">
-                            <p><span>Email </span>: jsmith@flatlab.com</p>
-                        </div>
-                        <div class="bio-row">
-                            <p><span>Monthly Income</span>: (12) 03 4567890</p>
-                        </div>
-                        <div class="bio-row">
-                            <p><span>Phone </span>: 88 (02) 123456</p>
+                            <p><span>Phone </span>: {{Userdetails.number}}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div>
-                <div class="row">
+
+                <!-- <div class="row">
                     <div class="col-md-6">
                         <div class="panel">
                             <div class="panel-body">
@@ -81,7 +82,7 @@
 
 
 
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

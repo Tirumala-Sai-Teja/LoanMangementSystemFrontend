@@ -7,17 +7,17 @@
     </style>
 
     <div class="login-form">
-        <form>
+        <form #applyloan="ngForm" (ngSubmit)="OnSubmitApply(applyloan)">
             <h1>Apply for Loan</h1>
             <div class="content">
                 <div class="input-field">
-                    <input type="text" placeholder="Loan Type" autocomplete="nope">
+                    <input type="text" ngModel name="loanType" placeholder="Loan Type" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                    <input type="number" placeholder="Loan Ammount" autocomplete="nope">
+                    <input type="number" ngModel name="loanAmount" placeholder="Loan Ammount" autocomplete="nope">
                 </div>
-                <div class="input-field">
-                    <input type="text" placeholder="Customer Name" autocomplete="nope">
+                <!-- <div class="input-field">
+                    <input type="text" ngModel="" placeholder="Customer Name" autocomplete="nope">
                 </div>
                 <div class="input-field">
                     <input type="number" placeholder="Monthly Income" autocomplete="nope">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="input-field">
                     <input type="text" placeholder="Email ID" autocomplete="nope">
-                </div>
+                </div> -->
 
 
             </div>

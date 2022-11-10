@@ -7,24 +7,41 @@
     </style>
 
     <div class="login-form">
-        <form>
+        <form #userregister="ngForm" (ngSubmit)="OnRegisterSubmit(userregister)">
             <h1>New User</h1>
             <div class="content">
                 <div class="input-field">
-                    <input type="text" placeholder="First Name" autocomplete="nope">
+                    <input ngModel type="text" name="username" placeholder="Username" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Last Name" autocomplete="nope">
+                    <input ngModel type="password" name="password" placeholder="New Password"
+                        autocomplete="new-password">
+                </div>
+
+                <div class="input-field">
+                    <input ngModel type="email" name="email" placeholder="Email ID" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                    <input type="email" placeholder="Email ID" autocomplete="nope">
+                    <input ngModel type="text" name="number" placeholder="Phone Number" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Phone Number" autocomplete="nope">
+                    <input ngModel type="text" name="address" placeholder="Address" autocomplete="nope">
                 </div>
                 <div class="input-field">
-                    <input type="password" placeholder="New Password" autocomplete="new-password">
+                    <input ngModel type="text" name="pan" placeholder="Pan" autocomplete="nope">
                 </div>
+                <div class="input-field">
+                    <input ngModel type="text" name="gender" placeholder="Gender" autocomplete="nope">
+                </div>
+                <div class="input-field">
+                    <input ngModel type="text" name="dob" placeholder="DOB(dd/mm/yyyy)" autocomplete="nope">
+                </div>
+                <div class="input-field">
+                    <input ngModel type="number" name="monthlyIncome" placeholder="Monthly Income" autocomplete="nope">
+                </div>
+
+
+
             </div>
             <div class="action">
                 <button>Create Account</button>
