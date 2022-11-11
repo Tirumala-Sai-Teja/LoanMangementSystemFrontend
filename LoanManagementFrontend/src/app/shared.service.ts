@@ -20,12 +20,7 @@ export class SharedService {
     return this.http.get<any>(this.APIurl+"LoanRate/getLoanRate")
   }
 
-  // updateLoanRates(val: any){
-  //   return this.http.post(this.APIurl + "LoanRate/editLoanRate", val);
-  // }
-  // adminLogin(credentials:{username:string,password:string}) : Observable<string>{
-  //   return this.http.post<string>(this.APIurl + "AdminLogin/login", credentials);
-  // }
+
  adminLogin(credentials:any) : Observable<any>{
     return this.http.post(this.APIurl + "AdminLogin/login", credentials,{responseType:'text'});
   }

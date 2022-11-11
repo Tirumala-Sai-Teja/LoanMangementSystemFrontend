@@ -21,18 +21,17 @@ export class ChangepasswordComponent implements OnInit {
   onChange(changepwd: NgForm) {
     this.reqdata['username'] = this.Userdetails.username;
     this.reqdata['password'] = changepwd.form.value.password;
-    if (this.reqdata.password === changepwd.form.value.password && changepwd.form.value.oldpassword == this.Userdetails.password) {
+    // console.log(changepwd.form.value.newpassword,changepwd.form.value.password);
+    
+    if (changepwd.form.value.newpassword === changepwd.form.value.password && changepwd.form.value.oldpassword == this.Userdetails.password) {
       this.userAuthService.userChangePassword(this.reqdata).subscribe((data) => {
-        // this.Userdata =JSON.parse(data);
-        // console.log(data);
-        this.router.navigate(["/adminhome"]);
-        // sessionStorage.setItem("user", data);//storing user details in session storage
-        // // console.log(this.Userdata);
-      
+        alert("Password changed successfully!!");
+        this.router.navigate(["/userhome"]);
+       
       })
     }
     else {
-      alert("Entered password is wrong");
+      alert("Entered password is wrong!!");
       
     }
   }

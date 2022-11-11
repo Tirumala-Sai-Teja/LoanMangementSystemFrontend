@@ -13,13 +13,7 @@ export class AdminpaymentsComponent implements OnInit {
     
    }
   Payments: any = [];
-      //  "receiptId": 2,
-      //   "custId": 1,
-      //   "receiptDate": "22/07/2019",
-      //   "emiDate": "22/07/2019",
-      //   "emiAmount": 5000,
-      //   "lateFineCharge": 0,
-        // "totalAmount": 5000
+
   ngOnInit(): void {
     this.getPayments();
   }

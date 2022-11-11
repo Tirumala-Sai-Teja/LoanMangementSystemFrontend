@@ -26,7 +26,7 @@ export class AdminloginComponent implements OnInit {
       this.router.navigate(["./adminhome"]);
     }, (error) => {
       // console.log(error.status);
-      alert("Invalid Credentials!!");
+      alert("Please enter valid credentials!!");
     })
   }
 

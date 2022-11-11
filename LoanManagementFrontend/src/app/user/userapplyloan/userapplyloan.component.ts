@@ -24,8 +24,10 @@ export class UserapplyloanComponent implements OnInit {
   OnSubmitApply(applyloan: NgForm) {
      applyloan.form.value.custId=this.Userdetails.id
       this.userAuthService.userApplyLoan(applyloan.form.value).subscribe((data) => {
-      console.log("applied for loan",data);
+        alert("Applied for loan successfully!!");
         this.router.navigate(["/userhome"]);
+      }, (error) => {
+        alert("Failed to apply!!");
     })
   }
 }

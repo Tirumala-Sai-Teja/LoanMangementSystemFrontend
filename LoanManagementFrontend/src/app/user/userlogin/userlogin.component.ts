@@ -26,7 +26,7 @@ export class UserloginComponent implements OnInit {
       this.router.navigate(["./userhome"]);
     }, (error) => {
       // console.log(error.status);
-      alert("error");
+      alert("Plaese enter valid credentials!!");
     })
 }
 }

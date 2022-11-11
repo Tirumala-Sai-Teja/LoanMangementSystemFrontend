@@ -21,9 +21,10 @@ export class AdminchangepasswordComponent implements OnInit {
   onChange(changepwd: NgForm) {
     this.reqdata['username'] = this.admin;
     this.reqdata['password'] = changepwd.form.value.password;
-    if (this.reqdata.password === changepwd.form.value.password ) {
+  
+    if ( changepwd.form.value.newpassword === changepwd.form.value.password ) {
       this.userAuthService.adminChangePassword(this.reqdata).subscribe((data) => {
-     
+      alert("Password changed successfully!!");
       this.router.navigate(["/adminhome"]);
   
       
